@@ -118,7 +118,11 @@ class folderClass: UITableViewController {
         self.folderTableView.isEditing = !self.folderTableView.isEditing
         sender.title = (self.folderTableView.isEditing) ? "Done" : "Edit"
     }
+        
+
 }
+
+
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
