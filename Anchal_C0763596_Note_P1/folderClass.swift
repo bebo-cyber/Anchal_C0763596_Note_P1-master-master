@@ -58,7 +58,7 @@ class folderClass: UITableViewController {
     }
 
    
-   
+   // to create new folder
     @IBAction func newFolder(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "New folder", message: "Enter a name for this folder", preferredStyle: .alert)
                           
@@ -94,7 +94,7 @@ class folderClass: UITableViewController {
         folders?.remove(at: sourceIndexPath.item)
         folders?.insert(moveFolder!, at: destinationIndexPath.item)
     }
-    
+        // removing delete in edit
     override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
     }
@@ -104,7 +104,7 @@ class folderClass: UITableViewController {
         return folderTableView.isEditing ? .none : .delete
     }
     
-    
+        // swipe for deletion
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if (editingStyle == .delete)
@@ -113,7 +113,7 @@ class folderClass: UITableViewController {
             folderTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
+        // to edit
     @IBAction func edit(_ sender: UIBarButtonItem) {
         self.folderTableView.isEditing = !self.folderTableView.isEditing
         sender.title = (self.folderTableView.isEditing) ? "Done" : "Edit"
